@@ -1,0 +1,7 @@
+{
+  "name": "RCApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
