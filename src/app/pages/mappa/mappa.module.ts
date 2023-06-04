@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import {Mappa} from "./mappa";
-import {MappaRoutingModule} from "./mappa-routing.module";
+
+import { IonicModule } from '@ionic/angular';
+
+import { MappaRoutingModule } from './mappa-routing.module';
+
+import { Mappa } from './mappa';
 
 @NgModule({
   imports: [
@@ -14,5 +17,4 @@ import {MappaRoutingModule} from "./mappa-routing.module";
   ],
   declarations: [Mappa]
 })
-
 export class MappaModule {}

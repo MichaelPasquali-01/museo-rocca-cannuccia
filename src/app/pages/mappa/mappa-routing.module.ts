@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import {Mappa} from "./mappa";
+import { Routes, RouterModule } from '@angular/router';
+
+import { Mappa } from './mappa';
 
 const routes: Routes = [
   {
-    path: 'mappa',
-    component: Mappa,
+    path: '',
+    component: Mappa
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class MappaRoutingModule {}
