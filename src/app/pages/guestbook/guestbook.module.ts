@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import {Guestbook} from "./guestbook";
+
+import { IonicModule } from '@ionic/angular';
+
+import { GuestbookPageRoutingModule } from './guestbook-routing.module';
+
+import { GuestbookPage } from './guestbook.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    GuestbookPageRoutingModule
   ],
-  declarations: [Guestbook]
+  declarations: [GuestbookPage]
 })
-
-export class GuestbookModule {}
+export class GuestbookPageModule {}

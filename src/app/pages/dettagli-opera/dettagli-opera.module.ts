@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ScansionePageRoutingModule } from './scansione-routing.module';
+import { DettagliOperaPageRoutingModule } from './dettagli-opera-routing.module';
 
-import { ScansionePage } from './scansione.page';
+import { DettagliOperaPage } from './dettagli-opera.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ScansionePageRoutingModule
+    DettagliOperaPageRoutingModule
   ],
-  declarations: [ScansionePage]
+  declarations: [DettagliOperaPage]
 })
-export class ScansionePageModule {}
+export class DettagliOperaPageModule {}

@@ -1,11 +1,15 @@
-import {Component} from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  templateUrl: 'mappa.html',
-  styleUrls: ['mappa.scss']
+  selector: 'app-mappa',
+  templateUrl: './mappa.html',
+  styleUrls: ['./mappa.scss'],
 })
-export class Mappa {
+export class Mappa implements OnInit {
 
-  constructor() {}
+  constructor() { }
+
+  ngOnInit() {
+  }
 
 }

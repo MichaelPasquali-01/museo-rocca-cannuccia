@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import {Preferiti} from "./preferiti";
+
+import { IonicModule } from '@ionic/angular';
+
+import { PreferitiPageRoutingModule } from './preferiti-routing.module';
+
+import { PreferitiPage } from './preferiti.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    PreferitiPageRoutingModule
   ],
-  declarations: [Preferiti]
+  declarations: [PreferitiPage]
 })
-
-export class PreferitiModule {}
+export class PreferitiPageModule {}
