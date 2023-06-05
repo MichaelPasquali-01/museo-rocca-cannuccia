@@ -7,8 +7,12 @@
           <ion-buttons slot="end">
             <ion-menu-button></ion-menu-button>
           </ion-buttons>
-          <img src="../../../assets/logo.png" width="40px" style="display:inline-block" height="40px"/>
-          <ion-title style="display:inline-block">RCApp</ion-title>
+          <ion-buttons slot="start">
+            <ion-button>
+              <img src="assets/logo.png" width="40px" height="40px">
+            </ion-button>
+          </ion-buttons>
+          <ion-title>RC App</ion-title>
         </ion-toolbar>
       </ion-header>
     </div>
@@ -35,7 +39,7 @@
     </p>
   </ion-text>
 
-  <ion-button>Lascia una recensione</ion-button>
+  <ion-button (click)="navigateToGuestbookForm()" class="recensione">Lascia una recensione</ion-button>
 
   <ion-footer>
     <ion-toolbar>

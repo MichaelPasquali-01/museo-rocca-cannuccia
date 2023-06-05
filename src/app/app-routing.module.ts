@@ -57,6 +57,10 @@ const routes: Routes = [
   {
     path: 'scansione',
     loadChildren: () => import('./pages/scansione/scansione.module').then( m => m.ScansionePageModule)
+  },
+  {
+    path: 'guestbook-form',
+    loadChildren: () => import('./pages/guestbook-form/guestbook-form.module').then( m => m.GuestbookFormPageModule)
   }
 ];
 
