@@ -7,7 +7,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule)
   },
   {
-    path: 'dettagliOpera',
+    path: 'dettagli-opera',
     loadChildren: () => import('./pages/dettagli-opera/dettagli-opera.module').then(m => m.DettagliOperaPageModule)
   },
   {
@@ -16,11 +16,8 @@ const routes: Routes = [
   },
   {
     path: 'mappa',
-    loadChildren: () =>{
-      console.log('Navigating to mappa page');
-      return import('./pages/mappa/mappa.module').then(m => m.MappaModule);
-    }
-  },
+    loadChildren: () =>import('./pages/mappa/mappa.module').then(m => m.MappaModule)
+     },
   {
     path: 'preferiti',
     loadChildren: () => import('./pages/preferiti/preferiti.module').then(m => m.PreferitiPageModule)
@@ -30,6 +27,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/scansione/scansione.module').then(m => m.ScansionePageModule)
   },
   {
+    path: 'artista',
+    loadChildren: () => import('./pages/artista/artista.module').then( m => m.ArtistaModule)
+  },
+  {
+    path: 'guestbookform',
+    loadChildren: () => import('./pages/guestbook-form/guestbook-form.module').then( m => m.GuestbookFormPageModule)
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
@@ -37,30 +42,6 @@ const routes: Routes = [
   {
     path: '**',
     redirectTo: 'home'
-  },
-  {
-    path: 'artista',
-    loadChildren: () => import('./pages/artista/artista.module').then( m => m.ArtistaModule)
-  },
-  {
-    path: 'dettagli-opera',
-    loadChildren: () => import('./pages/dettagli-opera/dettagli-opera.module').then(m => m.DettagliOperaPageModule)
-  },
-  {
-    path: 'guestbook',
-    loadChildren: () => import('./pages/guestbook/guestbook.module').then( m => m.GuestbookPageModule)
-  },
-  {
-    path: 'preferiti',
-    loadChildren: () => import('./pages/preferiti/preferiti.module').then( m => m.PreferitiPageModule)
-  },
-  {
-    path: 'scansione',
-    loadChildren: () => import('./pages/scansione/scansione.module').then( m => m.ScansionePageModule)
-  },
-  {
-    path: 'guestbook-form',
-    loadChildren: () => import('./pages/guestbook-form/guestbook-form.module').then( m => m.GuestbookFormPageModule)
   }
 ];
 

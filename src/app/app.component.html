@@ -1,4 +1,27 @@
 <ion-app>
+<!-- Topbar -->
+  <ion-toolbar class="topbar">
+    <div class="ion-page" id="main-content">
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="end">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+          <ion-buttons slot="start">
+            <ion-button>
+              <img src="assets/logo.png" width="40px" height="40px">
+            </ion-button>
+          </ion-buttons>
+          <ion-title>RC App</ion-title>
+        </ion-toolbar>
+      </ion-header>
+    </div>
+  </ion-toolbar>
+
+  <!-- -->
+
+
+  <!-- Side Menù -->
   <ion-menu side="end" contentId="content">
     <ion-header>
       <ion-toolbar>
@@ -27,5 +50,8 @@
       </ion-list>
     </ion-content>
   </ion-menu>
+  <!-- -->
   <ion-router-outlet id="content"></ion-router-outlet>
+
+
 </ion-app>

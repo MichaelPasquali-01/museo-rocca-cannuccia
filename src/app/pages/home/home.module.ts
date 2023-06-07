@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
-import { GuestbookFormPageRoutingModule } from '../guestbook-form/guestbook-form-routing.module';
 
 
 @NgModule({
@@ -14,7 +13,6 @@ import { GuestbookFormPageRoutingModule } from '../guestbook-form/guestbook-form
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    GuestbookFormPageRoutingModule
   ],
   declarations: [HomePage]
 })

@@ -1,21 +1,6 @@
 <ion-header [translucent]="true">
 
-  <ion-toolbar>
-    <div class="ion-page" id="main-content">
-      <ion-header>
-        <ion-toolbar>
-          <ion-buttons slot="end">
-            <ion-menu-button></ion-menu-button>
-          </ion-buttons>
-          <ion-buttons slot="start">
-            <ion-button>
-              <img src="assets/logo.png" width="40px" height="40px">
-            </ion-button>
-          </ion-buttons>
-          <ion-title>RC App</ion-title>
-        </ion-toolbar>
-      </ion-header>
-    </div>
+  <ion-toolbar class="topbar">
   </ion-toolbar>
 
 </ion-header>
@@ -39,10 +24,11 @@
     </p>
   </ion-text>
 
-  <ion-button (click)="navigateToGuestbookForm()" class="recensione">Lascia una recensione</ion-button>
+  <ion-button routerLink="/guestbookform" class="recensione" color="dark" shape="round">Lascia una recensione</ion-button>
 
+  <!-- Footer -->
   <ion-footer>
-    <ion-toolbar>
+    <ion-toolbar color="secondary">
       <ion-icon name="logo-facebook"></ion-icon>
       <ion-icon name="logo-twitter"></ion-icon>
       <ion-icon name="logo-instagram"></ion-icon>
