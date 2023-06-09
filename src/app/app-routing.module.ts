@@ -23,10 +23,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/preferiti/preferiti.module').then(m => m.PreferitiPageModule)
   },
   {
-    path: 'scansione',
-    loadChildren: () => import('./pages/scansione/scansione.module').then(m => m.ScansionePageModule)
-  },
-  {
     path: 'artista',
     loadChildren: () => import('./pages/artista/artista.module').then( m => m.ArtistaModule)
   },
