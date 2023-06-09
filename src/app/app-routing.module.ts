@@ -31,6 +31,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/guestbook-form/guestbook-form.module').then( m => m.GuestbookFormPageModule)
   },
   {
+    path: 'search',
+    loadChildren: () => import('./pages/search/search.module').then( m => m.SearchPageModule)
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
@@ -38,10 +42,6 @@ const routes: Routes = [
   {
     path: '**',
     redirectTo: 'home'
-  },
-  {
-    path: 'search',
-    loadChildren: () => import('./pages/search/search.module').then( m => m.SearchPageModule)
   }
 ];
 

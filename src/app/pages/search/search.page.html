@@ -10,4 +10,31 @@
       <ion-title size="large">search</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-searchbar show-clear-button="always" (ionInput)="cerca($event)" placeholder="Cerca..."></ion-searchbar>
+  <ion-list *ngIf="resultsOpere.length > 0">
+    <ion-item> Opere </ion-item>
+    <ion-item button *ngFor="let opera of resultsOpere">
+      <ion-avatar slot="start">
+        <img [src]="opera.immagini[0]" />
+      </ion-avatar>
+      <ion-label> 
+        {{opera.nome}} 
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="resultsArtisti.length > 0">
+    <ion-item> Artisti </ion-item>
+    <ion-item button *ngFor="let artista of resultsArtisti">
+      <ion-avatar slot="start">
+        <img [src]="artista.immagineartista" />
+      </ion-avatar>
+      <ion-label> 
+        {{artista.nome}} 
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="resultsOpere.length === 0 && resultsArtisti.length === 0">
+    <ion-item> Nessun risultato. </ion-item>
+  </ion-list>
 </ion-content>
