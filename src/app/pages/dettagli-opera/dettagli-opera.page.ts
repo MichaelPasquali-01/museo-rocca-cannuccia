@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { OperaService } from 'src/app/services/opera/opera.service';
 
 @Component({
@@ -12,9 +13,16 @@ export class DettagliOperaPage implements OnInit {
   status:number = 0;
   opera:any;
   artisti:any[] = []
+  isFavorite:boolean = false;
 
-  constructor(private route: ActivatedRoute, private operaService: OperaService) { 
+  constructor(private route: ActivatedRoute, private operaService: OperaService, 
+    private nativeStorage: NativeStorage) { 
     this.id = Number(this.route.snapshot.paramMap.get('id'));
+
+    this.nativeStorage.getItem('favorites').then(
+      data => this.isFavorite = this.id !== null && data[this.id] !== undefined ? true : false,
+      error => console.log(error)
+    );
   }
 
   ngOnInit() { }
@@ -33,5 +41,31 @@ export class DettagliOperaPage implements OnInit {
         })
       });
     });
+  }
+
+  async aggiungiPreferiti() {
+    let favorite:any = await this.nativeStorage.getItem('favorites').then(
+      data => data,
+      error => {}
+    );
+
+    favorite = favorite === undefined ? {} : favorite;
+
+    console.log(favorite);
+
+    if (this.id !== null) {
+      if (!(this.id in favorite)) {
+        favorite[this.id] = {id: this.opera.id, nome: this.opera.nome, tipo: this.opera.idstanza};
+        this.isFavorite = true;
+      } else {
+        delete favorite[this.id];
+        this.isFavorite = false;        
+      } 
+
+      this.nativeStorage.setItem('favorites', favorite).then(
+        (data) => console.log(data),
+        (error) => this.isFavorite = false
+      );
+    }
   }
 }

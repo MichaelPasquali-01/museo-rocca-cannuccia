@@ -13,7 +13,7 @@ export class SearchPage implements OnInit {
   resultsOpere:any[] = [];
   resultsArtisti:any[] = [];
 
-  status:number = 200;
+  status:number = -1;
 
   cats:any[] = [];
 

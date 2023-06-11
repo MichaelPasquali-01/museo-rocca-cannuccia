@@ -10,4 +10,27 @@
       <ion-title size="large">preferiti</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <h3 *ngIf="preferiti.length === 0" style="text-align: center;"> Nessun preferito salvato. </h3>
+
+  <div *ngIf="stanze.length === 0">
+    <div *ngFor="let preferito of preferiti">
+      <ion-item lines="none" routerLink="/dettagli-opera/{{preferito.id}}"> 
+        <ion-icon slot="start" name="star"></ion-icon>
+        {{preferito.nome}}
+      </ion-item>
+    </div>
+  </div>
+
+  <div *ngFor="let stanza of stanze">
+    <ion-item> 
+      <h3> {{stanza.nome}} </h3>
+    </ion-item>
+    <div *ngFor="let preferito of preferiti">
+      <ion-item lines="none" *ngIf="stanza.id === preferito.tipo" routerLink="/dettagli-opera/{{preferito.id}}"> 
+        <ion-icon slot="start" name="star"></ion-icon>
+        {{preferito.nome}}
+      </ion-item>
+    </div>
+  </div>
 </ion-content>
