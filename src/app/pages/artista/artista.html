@@ -10,4 +10,11 @@
       <ion-title size="large">artista</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <h2 *ngIf="status !== 200" style="text-align: center;"> Artista non trovato. </h2>
+
+  <div *ngIf="status === 200">
+    <h2 style="text-align: center;"> {{artista.nome}} </h2>
+    <h3 style="text-align: center;"> {{artista.data}} </h3>
+  </div>
 </ion-content>

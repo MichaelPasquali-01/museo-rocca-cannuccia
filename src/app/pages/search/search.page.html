@@ -14,7 +14,7 @@
   <ion-searchbar show-clear-button="always" (ionInput)="cerca($event)" placeholder="Cerca..."></ion-searchbar>
   <ion-list *ngIf="resultsOpere.length > 0">
     <ion-item> Opere </ion-item>
-    <ion-item button *ngFor="let opera of resultsOpere">
+    <ion-item button *ngFor="let opera of resultsOpere" routerLink="/dettagli-opera/{{opera.id}}">
       <ion-avatar slot="start">
         <img [src]="opera.immagini[0]" />
       </ion-avatar>
@@ -23,9 +23,10 @@
       </ion-label>
     </ion-item>
   </ion-list>
+  
   <ion-list *ngIf="resultsArtisti.length > 0">
     <ion-item> Artisti </ion-item>
-    <ion-item button *ngFor="let artista of resultsArtisti">
+    <ion-item button *ngFor="let artista of resultsArtisti" routerLink="/artista/{{artista.id}}">
       <ion-avatar slot="start">
         <img [src]="artista.immagineartista" />
       </ion-avatar>
@@ -34,7 +35,9 @@
       </ion-label>
     </ion-item>
   </ion-list>
+  
   <ion-list *ngIf="resultsOpere.length === 0 && resultsArtisti.length === 0">
-    <ion-item> Nessun risultato. </ion-item>
+    <ion-item *ngIf="status === 200"> Nessun risultato. </ion-item>
+    <ion-item *ngIf="status !== 200"> Problema di connessione. Riprova più tardi. </ion-item>
   </ion-list>
 </ion-content>

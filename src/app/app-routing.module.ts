@@ -7,7 +7,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule)
   },
   {
-    path: 'dettagli-opera',
+    path: 'dettagli-opera/:id',
     loadChildren: () => import('./pages/dettagli-opera/dettagli-opera.module').then(m => m.DettagliOperaPageModule)
   },
   {
@@ -23,7 +23,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/preferiti/preferiti.module').then(m => m.PreferitiPageModule)
   },
   {
-    path: 'artista',
+    path: 'artista/:id',
     loadChildren: () => import('./pages/artista/artista.module').then( m => m.ArtistaModule)
   },
   {
@@ -35,6 +35,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/search/search.module').then( m => m.SearchPageModule)
   },
   {
+    path: 'stanza',
+    loadChildren: () => import('./pages/stanza/stanza.module').then( m => m.StanzaPageModule)
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
@@ -43,6 +47,7 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'home'
   }
+
 ];
 
 @NgModule({

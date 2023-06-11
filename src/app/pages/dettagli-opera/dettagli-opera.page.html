@@ -10,4 +10,13 @@
       <ion-title size="large">dettagliOpera</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <h2 *ngIf="status !== 200" style="text-align: center;"> Opera non trovata. </h2>
+
+  <div *ngIf="status === 200">
+    <h2 style="text-align: center;"> {{opera.nome}} </h2>
+    <h3 style="text-align: center;"> {{opera.data}} </h3>
+    <h3 *ngFor="let artista of artisti" 
+      style="text-align: center;" routerLink="/artista/{{artista.id}}"> {{artista.nome}} </h3>
+  </div>
 </ion-content>

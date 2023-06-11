@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchService } from 'src/app/services/search.service';
+import { SearchService } from 'src/app/services/search/search.service';
 
 @Component({
   selector: 'app-search',
@@ -13,23 +13,31 @@ export class SearchPage implements OnInit {
   resultsOpere:any[] = [];
   resultsArtisti:any[] = [];
 
+  status:number = 200;
+
+  cats:any[] = [];
+
   constructor(private searchService: SearchService) {}
 
-  ngOnInit() {
+  ionViewWillEnter() {
     this.searchService.getOpere().subscribe(res => {
       this.opere = [...res.opere];
       this.resultsOpere = [...this.opere];
-    });
+      this.status = res.status;
+    }, error => this.status = 500);
 
     this.searchService.getArtisti().subscribe(res => {
       this.artisti = [...res.artisti];
       this.resultsArtisti = [...this.artisti];
-    });
+      this.status = res.status;
+    }, error => this.status = 500);
   }
+
+  ngOnInit() { }
 
   cerca(event:any) {
     const query = event.target.value.toLowerCase();
-    console.log(query);
+
     if(query !== "") {
       this.resultsOpere = this.opere.filter((element) => 
         element.nome.toLowerCase().indexOf(query) > -1
