@@ -36,6 +36,7 @@
     "cordova-plugin-android-permissions": "^1.1.5",
     "cordova-plugin-camera": "^6.0.0",
     "cordova-plugin-nativestorage": "^2.3.2",
+    "ionic": "^5.4.16",
     "ionicons": "^7.0.0",
     "phonegap-plugin-barcodescanner": "^8.1.0",
     "rxjs": "~7.8.0",
