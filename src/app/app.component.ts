@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import {BarcodeScanner} from "@ionic-native/barcode-scanner/ngx";
+import {Platform} from "@ionic/angular";
 
 @Component({
   selector: 'app-root',
@@ -8,13 +9,18 @@ import {BarcodeScanner} from "@ionic-native/barcode-scanner/ngx";
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private barcodeScanner: BarcodeScanner, private router: Router) {}
+  constructor(private barcodeScanner: BarcodeScanner, private router: Router, private platform: Platform) {}
 
   scan() {
-    this.barcodeScanner.scan().then(barcodeData => {
-      this.router.navigate([`/dettagli-opera/${barcodeData.text}`]);
-    }).catch(err =>{
-      console.log('Error', err);
-    });
+  if(this.platform.is('android') || this.platform.is('ios')){
+      this.barcodeScanner.scan().then(barcodeData => {
+        this.router.navigate([`/dettagli-opera/${barcodeData.text}`]);
+      }).catch(err =>{
+        console.log('Error', err);
+      });
+    } else{
+    console.log('web');
   }
+}
+
 }
