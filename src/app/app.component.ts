@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import {BarcodeScanner} from "@ionic-native/barcode-scanner/ngx";
 import {Platform} from "@ionic/angular";
+import { SplashScreen } from '@capacitor/splash-screen';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,11 @@ import {Platform} from "@ionic/angular";
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private barcodeScanner: BarcodeScanner, private router: Router, private platform: Platform) {}
+  constructor(private barcodeScanner: BarcodeScanner, private router: Router, private platform: Platform) {
+    SplashScreen.hide().catch((error: any) => {
+      console.warn(error);
+    });
+  }
 
   scan() {
   if(this.platform.is('android') || this.platform.is('ios')){
@@ -19,7 +24,7 @@ export class AppComponent {
         console.log('Error', err);
       });
     } else{
-    console.log('web');
+    this.router.navigate(['/scansione']);
   }
 }
 

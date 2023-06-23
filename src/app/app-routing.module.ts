@@ -39,6 +39,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/stanza/stanza.module').then( m => m.StanzaPageModule)
   },
   {
+    path: 'scansione',
+    loadChildren: () => import('./pages/scansione/scansione.module').then( m => m.ScansionePageModule)
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
@@ -46,7 +50,12 @@ const routes: Routes = [
   {
     path: '**',
     redirectTo: 'home'
+  },
+  {
+    path: 'scansione',
+    loadChildren: () => import('./pages/scansione/scansione.module').then( m => m.ScansionePageModule)
   }
+
 
 ];
 

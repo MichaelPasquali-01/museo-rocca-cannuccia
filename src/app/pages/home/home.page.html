@@ -13,9 +13,10 @@
   </ion-header>
 
 
-  <ion-button class="search" expand="block" fill="outline" shape="round" routerLink="/search">
-
-    Cerca tra le nostre esposizioni...
+  <ion-button class="search" expand="block" fill="outline" shape="round" routerLink="/search" aria-label="Cerca tra le nostre esposizioni">
+    <ion-icon class="search-ico" name ="search" aria-hidden="true" >
+  </ion-icon>
+    Cerca tra le nostre esposizioni
   </ion-button>
 
   <img src="./assets/image1.jpeg" width="650" height="350"/>
@@ -46,15 +47,15 @@
     <ion-toolbar color="secondary">
 
       <ion-row>
-        <ion-col><ion-button href="www.facebook.com" fill="clear">
+        <ion-col><ion-button (click)="openFacebookPage()" fill="clear">
           <ion-icon name="logo-facebook"></ion-icon></ion-button></ion-col>
-        <ion-col><ion-button href="www.twitter.com" fill="clear">
+        <ion-col><ion-button (click)="openTwitterPage()" fill="clear">
           <ion-icon name="logo-twitter"></ion-icon></ion-button></ion-col>
-        <ion-col><ion-button href="www.instagram.com" fill="clear">
+        <ion-col><ion-button (click)="openInstagramPage()" fill="clear">
           <ion-icon name="logo-instagram"></ion-icon></ion-button></ion-col>
         <ion-col><ion-button data-href="tel:1234567" fill="clear">
           <ion-icon  name="call-outline"></ion-icon></ion-button></ion-col>
-        <ion-col><ion-button data-href="https://api.whatsapp.com/send?phone=+391234567894" fill="clear">
+        <ion-col><ion-button (click)="openWhatsappPage()" fill="clear">
           <ion-icon  name="logo-whatsapp"></ion-icon></ion-button></ion-col>
         <ion-col><ion-button fill="clear">
           <ion-icon  name="mail-outline"></ion-icon></ion-button></ion-col>
