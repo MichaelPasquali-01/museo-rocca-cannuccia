@@ -6,7 +6,17 @@ const config: CapacitorConfig = {
   webDir: 'www',
   server: {
     androidScheme: 'https'
+  },
+  plugins: {
+    'community-barcode-scanner': {
+      platforms: {
+        android: {
+          enabled: false
+        }
+      }
+    }
   }
+
 };
 
 export default config;

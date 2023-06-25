@@ -14,12 +14,36 @@
   <h2 *ngIf="status !== 200" style="text-align: center;"> Opera non trovata. </h2>
 
   <div *ngIf="status === 200">
-    <h2 style="text-align: center;"> <p> {{opera.nome}} </p>     
-      <ion-icon slot="end" (click)="aggiungiPreferiti()" *ngIf="!isFavorite" size="large" name="heart-outline"></ion-icon> 
-      <ion-icon slot="end" (click)="aggiungiPreferiti()" *ngIf="isFavorite" size="large" name="heart"></ion-icon> 
-    </h2>
-    <h3 style="text-align: center;"> {{opera.data}} </h3>
-    <h3 *ngFor="let artista of artisti" 
-      style="text-align: center;" routerLink="/artista/{{artista.id}}"> {{artista.nome}} </h3>
+    <ion-list>
+      <ion-item>
+        <ion-col>
+          <ion-img class="img"
+                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/El_Beso_%28Pinacoteca_de_Brera%2C_Mil%C3%A1n%2C_1859%29.jpg/216px-El_Beso_%28Pinacoteca_de_Brera%2C_Mil%C3%A1n%2C_1859%29.jpg"></ion-img>
+
+          <h2 style="text-align: center;"><p> {{opera.nome}} </p>
+            <ion-icon slot="end" class="right" (click)="aggiungiPreferiti()" *ngIf="!isFavorite" size="large"
+                      name="heart-outline"></ion-icon>
+            <ion-icon slot="end" class="right" (click)="aggiungiPreferiti()" *ngIf="isFavorite" size="large"
+                      name="heart"></ion-icon>
+          </h2>
+
+          <h3 style="text-align: start;"> {{opera.data}} </h3>
+        </ion-col>
+      </ion-item>
+      <h3 *ngFor="let artista of artisti"
+          style="text-align: start;" routerLink="/artista/{{artista.id}}"> {{artista.nome}} </h3>
+
+      <p>
+        Il bacio. Episodio della giovinezza. Costumi del secolo XIV, meglio noto come Il bacio, è un dipinto a olio su
+        tela (112×88 cm) del pittore italiano Francesco Hayez, realizzato nel 1859 e conservato alla Pinacoteca di
+        Brera.
+
+        Collocato in un contesto medievale, raffigura due giovani innamorati che si stanno baciando con grande
+        passionalità. Per la travolgente carica emotiva, la raffinata scenografia ed il forte valore civile (la tela è
+        infatti pregna di pulsioni risorgimentali, a simboleggiare l'amore della patria e la lotta allo straniero),
+        l'opera è considerata il manifesto dell'arte romantica italiana; per questo motivo riscosse un grande successo
+        popolare, tanto che Hayez la riprodusse in altre due versioni, con piccole modifiche fra l'una e l'altra.
+      </p>
+    </ion-list>
   </div>
 </ion-content>
