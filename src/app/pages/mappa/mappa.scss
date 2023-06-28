@@ -4,3 +4,23 @@ img {
   display: block;
 
 }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.frame {
+  width: 1500px; /* Larghezza del frame */
+  height: 800px; /* Altezza del frame */
+  border: 1px solid #000; /* Colore e spessore del bordo */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombra del frame */
+}
+
