@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { NativeStorage } from '@awesome-cordova-plugins/native-storage/ngx';
 import { OperaService } from 'src/app/services/opera/opera.service';
 
 @Component({
@@ -8,15 +8,15 @@ import { OperaService } from 'src/app/services/opera/opera.service';
   templateUrl: './dettagli-opera.page.html',
   styleUrls: ['./dettagli-opera.page.scss'],
 })
-export class DettagliOperaPage implements OnInit {
+export class DettagliOperaPage  {
   id:number|null;
   status:number = 0;
   opera:any;
   artisti:any[] = []
   isFavorite:boolean = false;
 
-  constructor(private route: ActivatedRoute, private operaService: OperaService, 
-    private nativeStorage: NativeStorage) { 
+  constructor(private route: ActivatedRoute, private operaService: OperaService,
+    private nativeStorage: NativeStorage) {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
 
     this.nativeStorage.getItem('favorites').then(
@@ -25,7 +25,7 @@ export class DettagliOperaPage implements OnInit {
     );
   }
 
-  ngOnInit() { }
+
 
   ionViewWillEnter() {
     this.artisti = []
@@ -59,8 +59,8 @@ export class DettagliOperaPage implements OnInit {
         this.isFavorite = true;
       } else {
         delete favorite[this.id];
-        this.isFavorite = false;        
-      } 
+        this.isFavorite = false;
+      }
 
       this.nativeStorage.setItem('favorites', favorite).then(
         (data) => console.log(data),

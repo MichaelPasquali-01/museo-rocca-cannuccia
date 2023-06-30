@@ -7,15 +7,6 @@ const config: CapacitorConfig = {
   server: {
     androidScheme: 'https'
   },
-  plugins: {
-    'community-barcode-scanner': {
-      platforms: {
-        android: {
-          enabled: false
-        }
-      }
-    }
-  }
 
 };
 

@@ -6,7 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { ArtistaRoutingModule } from './artista-routing.module';
 
-import { Artista } from './artista';
+import { ArtistaPage } from './artista-page.component';
 
 @NgModule({
   imports: [
@@ -15,6 +15,6 @@ import { Artista } from './artista';
     IonicModule,
     ArtistaRoutingModule
   ],
-  declarations: [Artista]
+  declarations: [ArtistaPage]
 })
 export class ArtistaModule {}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { NativeStorage } from '@awesome-cordova-plugins/native-storage/ngx';
 import { PreferitiService } from 'src/app/services/preferiti/preferiti.service';
 
 @Component({
@@ -7,14 +7,13 @@ import { PreferitiService } from 'src/app/services/preferiti/preferiti.service';
   templateUrl: './preferiti.page.html',
   styleUrls: ['./preferiti.page.scss'],
 })
-export class PreferitiPage implements OnInit {
+export class PreferitiPage{
   stanze:any[] = []
   preferiti:any[] = []
 
-  constructor(private nativeStorage : NativeStorage, 
+  constructor(private nativeStorage : NativeStorage,
     private preferitiService: PreferitiService) { }
 
-  ngOnInit() { }
 
   ionViewWillEnter() {
     this.preferitiService.getStanze().subscribe({
@@ -25,9 +24,9 @@ export class PreferitiPage implements OnInit {
           (data) => {
             this.preferiti = Object.values(data);
             const stanzeDisponibili:any[] = [];
-            
+
             this.preferiti.forEach((preferito:any) => {
-              stanzeDisponibili.push(preferito.tipo);  
+              stanzeDisponibili.push(preferito.tipo);
             });
 
             this.stanze = this.stanze.filter(stanza => stanzeDisponibili.includes(stanza.id));

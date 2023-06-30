@@ -1,12 +1,1 @@
-{
-  "appId": "io.ionic.starter",
-  "appName": "RCApp",
-  "webDir": "www",
-  "plugins": {
-    "community-barcode-scanner": {
-      "platforms": [
-        "web"
-      ]
-    }
-  }
-}
+

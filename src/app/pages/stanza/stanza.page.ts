@@ -5,11 +5,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './stanza.page.html',
   styleUrls: ['./stanza.page.scss'],
 })
-export class StanzaPage implements OnInit {
+export class StanzaPage {
 
   constructor() { }
 
-  ngOnInit() {
-  }
 
 }

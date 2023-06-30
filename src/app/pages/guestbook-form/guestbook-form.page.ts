@@ -5,11 +5,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './guestbook-form.page.html',
   styleUrls: ['./guestbook-form.page.scss'],
 })
-export class GuestbookFormPage implements OnInit {
+export class GuestbookFormPage  {
 
   constructor() { }
 
-  ngOnInit() {
-  }
 
 }

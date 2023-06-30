@@ -9,7 +9,6 @@ android {
 
 apply from: "../capacitor-cordova-android-plugins/cordova.variables.gradle"
 dependencies {
-    implementation project(':capacitor-community-barcode-scanner')
     implementation project(':capacitor-app')
     implementation project(':capacitor-app-launcher')
     implementation project(':capacitor-browser')
@@ -18,9 +17,8 @@ dependencies {
     implementation project(':capacitor-splash-screen')
     implementation project(':capacitor-status-bar')
     implementation "androidx.core:core:1.6.+"
-    implementation "com.android.support:support-v4:27.+"
 }
-apply from: "../../node_modules/phonegap-plugin-barcodescanner/src/android/barcodescanner.gradle"
+
 
 if (hasProperty('postBuildExtras')) {
   postBuildExtras()

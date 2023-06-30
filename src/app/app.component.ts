@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import {BarcodeScanner} from "@ionic-native/barcode-scanner/ngx";
+import {BarcodeScanner} from "@awesome-cordova-plugins/barcode-scanner/ngx";
 import {Platform} from "@ionic/angular";
 import { SplashScreen } from '@capacitor/splash-screen';
 

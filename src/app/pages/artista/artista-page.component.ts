@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ArtistaService } from 'src/app/services/artista/artista.service';
 
 @Component({
   selector: 'app-artista',
-  templateUrl: './artista.html',
-  styleUrls: ['./artista.scss'],
+  templateUrl: './artista-page.component.html',
+  styleUrls: ['./artista-page.component.scss'],
 })
-export class Artista implements OnInit {
+export class ArtistaPage  {
   id:number|null;
   status:number = 0;
   artista:any;
@@ -15,7 +15,6 @@ export class Artista implements OnInit {
   constructor(private route: ActivatedRoute, private artistaService: ArtistaService) {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
   }
-  ngOnInit() { }
 
   ionViewWillEnter() {
     this.artistaService.getDettagliArtista(this.id).subscribe((res:any) => {
@@ -25,4 +24,6 @@ export class Artista implements OnInit {
       this.artista.data = `${`0${date.getDate()}`.slice(-2)}/${`0${date.getMonth()}`.slice(-2)}/${date.getFullYear()}`;
     });
   }
+
+
 }

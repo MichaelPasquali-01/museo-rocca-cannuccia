@@ -1,5 +1,5 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MappaPage } from './mappa';
+import { ComponentFixture, TestBed,async } from '@angular/core/testing';
+import { MappaPage } from './mappa-page.component';
 
 describe('MappaPage', () => {
   let component: MappaPage;
