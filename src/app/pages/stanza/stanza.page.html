@@ -1,13 +1,32 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>stanza</ion-title>
+    <ion-title>Opere della stanza del museo</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">stanza</ion-title>
+      <ion-title size="large"> stanza </ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-list >
+    <ng-container *ngFor="let stanza of stanze">
+      <ion-list-header>
+        Stanza
+      </ion-list-header>
+      <ion-item *ngFor="let opera of stanza">
+        <ion-thumbnail slot="start">
+          <img [src]="opera.immagine">
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ opera.titolo }}</h2>
+          <p>{{ opera.autore }}</p>
+        </ion-label>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+
 </ion-content>
+

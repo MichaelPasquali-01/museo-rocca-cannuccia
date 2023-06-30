@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+// @ts-ignore
 const routes: Routes = [
   {
     path: 'home',
@@ -38,10 +39,7 @@ const routes: Routes = [
     path: 'stanza',
     loadChildren: () => import('./pages/stanza/stanza.module').then( m => m.StanzaPageModule)
   },
-  {
-    path: 'scansione',
-    loadChildren: () => import('./pages/scansione/scansione.module').then( m => m.ScansionePageModule)
-  },
+
   {
     path: '',
     redirectTo: 'home',
@@ -51,10 +49,6 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'home'
   },
-  {
-    path: 'scansione',
-    loadChildren: () => import('./pages/scansione/scansione.module').then( m => m.ScansionePageModule)
-  }
 
 
 ];
