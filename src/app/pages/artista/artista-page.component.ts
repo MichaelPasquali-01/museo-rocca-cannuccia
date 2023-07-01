@@ -19,6 +19,8 @@ export class ArtistaPage  {
 
   ionViewWillEnter() {
     this.artistaService.getDettagliArtista(this.id).subscribe((res:any) => {
+      this.opere = []
+
       this.status = res.status;
       this.artista = res.artista;
       const date = new Date(res.artista.data);
