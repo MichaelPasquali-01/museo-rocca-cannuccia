@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GuestbookService } from 'src/app/services/guestbook/guestbook.service';
 
 @Component({
   selector: 'app-guestbook',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./guestbook.page.scss'],
 })
 export class GuestbookPage implements OnInit {
+  recensioni: any[] = [];
 
-  constructor() { }
+  constructor(private guestbookService: GuestbookService) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  ionViewWillEnter() {
+    this.guestbookService.getRecensioni().subscribe((res:any) => {
+      this.recensioni = res;
+    });
   }
-
 }

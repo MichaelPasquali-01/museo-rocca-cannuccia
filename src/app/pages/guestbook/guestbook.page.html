@@ -10,4 +10,16 @@
       <ion-title size="large">guestbook</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <h3 *ngIf="recensioni.length === 0" style="text-align: center;"> Non ci sono recensioni. </h3>
+  <h3 *ngIf="recensioni.length > 0" style="text-align: center;"> Recensioni </h3>
+  <ion-list *ngFor="let rec of recensioni">
+    <div style="border: 2px solid gray; border-radius: 20px; padding: 10px;">
+      <h2 style="text-align: center;">{{rec.nome}}</h2> 
+      <br>
+      <p>{{rec.messaggio}}</p> 
+      <br>
+      <img style="display: block; margin: auto;" src="https://unitestexample.onrender.com{{rec.foto.url}}">
+    </div>
+  </ion-list>
 </ion-content>

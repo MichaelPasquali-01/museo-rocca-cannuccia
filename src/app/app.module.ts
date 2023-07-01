@@ -7,10 +7,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 import { HttpClientModule } from '@angular/common/http';
 import { NativeStorage } from '@awesome-cordova-plugins/native-storage/ngx';
+import { FileUploadModule } from 'ng2-file-upload';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, FileUploadModule],
   providers: [
     NativeStorage,
     BarcodeScanner,

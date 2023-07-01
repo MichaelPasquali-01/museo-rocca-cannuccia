@@ -4,28 +4,34 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
-      <ion-input
-      label="Nome"
-      label-placement="floating"
-      fill="outline"
-      [clearOnEdit]="true"
-      style="margin: 15px 15px">
-      </ion-input>
-
-
-      <ion-textarea
-        placeholder="Recensione"
-        [clearOnEdit]="true"
-        fill="outline"
-      rows="15"
-      style="margin: 15px 15px">
-      </ion-textarea>
-<ion-row class="ion-justify-content-end">
-  <ion-button color="dark" style="margin-right: 15px"  >Allega foto</ion-button>
-</ion-row>
+  <ion-input
+    id="nome"
+    label="Nome"
+    label-placement="floating"
+    fill="outline"
+    [clearOnEdit]="true"
+    style="margin: 15px 15px"
+    (change)="onNameChange($event)">
+  </ion-input>
+  <ion-textarea
+    id="messaggio"
+    placeholder="Recensione"
+    [clearOnEdit]="true"
+    fill="outline"
+    rows="15"
+    style="margin: 15px 15px"
+    (change)="onMessaggioChange($event)">
+  </ion-textarea>
+  <ion-row class="ion-justify-content-start">
+    <h4 style="margin-left: 15px">Allega un file</h4>
+  </ion-row>
+  <ion-row class="ion-justify-content-start">
+    <input type="file" id="filesPicker" color="dark" style="margin-left: 15px" (change)="onFileChange($event)" />
+  </ion-row>
   <ion-row class="ion-justify-content-center">
-  <ion-button color="dark" shape="round" >Invia</ion-button>
-</ion-row>
-
+    <ion-button color="dark" shape="round" 
+      (click)="onFormSubmit()" >
+      Invia
+    </ion-button>
+  </ion-row>
 </ion-content>
