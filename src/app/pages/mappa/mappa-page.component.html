@@ -7,11 +7,14 @@
     <ion-toolbar>
     </ion-toolbar>
   </ion-header>
-  <div class="container">
-    <div class="frame">
-      <ion-title size="large">Mappa del museo</ion-title>
-      <img src="../../../assets/Mappa.png" width="2000" height="800"/>
-    </div>
-  </div>
+
+  <img src="../../../assets/Mappa.png" width="2000" height="800" usemap="#image_map" (load)="imageResized();"/>
+  <map name="image_map">
+    <area alt="impressionismo" title="impressionismo" routerLink="/stanza/2" coords="45,49,1772,413" shape="rect">
+    <area alt="neoclassicismo" title="neoclassicismo" routerLink="/stanza/3" coords="44,415,707,838" shape="rect">
+    <area alt="futurismo" title="futurismo" routerLink="/stanza/4" coords="57,835,713,1253" shape="rect">
+    <area alt="romanticismo" title="romanticismo" routerLink="/stanza/1" coords="1076,412,1765,834" shape="rect">
+    <area alt="cubismo" title="cubismo" routerLink="/stanza/5" coords="1077,845,1760,1256" shape="rect">
+  </map>
 </ion-content>
 

@@ -25,6 +25,9 @@
     <h3>Opere</h3>
     <ion-list>
       <ion-item *ngFor="let opera of opere" routerLink="/dettagli-opera/{{opera.id}}">
+        <ion-thumbnail slot="start">
+          <img [src]="opera.immagini[0]" />
+        </ion-thumbnail>
         <p> {{opera.nome}} </p>
       </ion-item>
     </ion-list>

@@ -11,21 +11,16 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-list >
-    <ng-container *ngFor="let stanza of stanze">
-      <ion-list-header>
-        Stanza
-      </ion-list-header>
-      <ion-item *ngFor="let opera of stanza">
-        <ion-thumbnail slot="start">
-          <img [src]="opera.immagine">
-        </ion-thumbnail>
-        <ion-label>
-          <h2>{{ opera.titolo }}</h2>
-          <p>{{ opera.autore }}</p>
-        </ion-label>
-      </ion-item>
-    </ng-container>
+  <h2 style="text-align: center;"> {{stanza}} </h2>
+  <ion-list>
+    <ion-item *ngFor="let opera of opere" routerLink="/dettagli-opera/{{opera.id}}">
+      <ion-thumbnail slot="start">
+        <img src="{{opera.immagini[0]}}">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ opera.nome }}</h2>
+      </ion-label>
+    </ion-item>
   </ion-list>
 
 </ion-content>

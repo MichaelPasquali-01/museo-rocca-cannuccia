@@ -15,9 +15,9 @@
   <ion-list *ngIf="resultsOpere.length > 0">
     <ion-item><h3>  Opere </h3></ion-item>
     <ion-item lines="none" button *ngFor="let opera of resultsOpere" routerLink="/dettagli-opera/{{opera.id}}">
-      <ion-avatar slot="start">
+      <ion-thumbnail slot="start">
         <img [src]="opera.immagini[0]" />
-      </ion-avatar>
+      </ion-thumbnail>
       <ion-label> 
         {{opera.nome}} 
       </ion-label>
