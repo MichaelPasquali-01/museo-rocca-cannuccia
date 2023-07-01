@@ -36,7 +36,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/search/search.module').then( m => m.SearchPageModule)
   },
   {
-    path: 'stanza',
+    path: 'stanza/:id',
     loadChildren: () => import('./pages/stanza/stanza.module').then( m => m.StanzaPageModule)
   },
 

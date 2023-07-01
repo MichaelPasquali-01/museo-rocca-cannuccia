@@ -18,28 +18,14 @@
 
     <h2 style="margin-left: 20px;"> {{artista.nome}} </h2>
     <ion-img class="img"
-             src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Francesco_Hayez_057.jpg/220px-Francesco_Hayez_057.jpg"></ion-img>
+             src="{{artista.immagineartista}}"></ion-img>
    <!-- <h3 style="text-align: center;"> {{artista.data}} </h3> -->
     <h3>Biografia</h3>
-    <p>Francesco Hayez (AFI: /franˈʧesko ˈajeʦ/[2]; Venezia, 10 febbraio 1791 – Milano, 12 febbraio 1882) è stato un
-      pittore italiano.
-
-      Passato dalla temperie neoclassica a quella romantica (della quale è stato il maggiore esponente in Italia), Hayez
-      è stato un artista innovatore e poliedrico, lasciando un segno indelebile nella storia dell'arte italiana per
-      essere stato l'autore del dipinto Il bacio e di una serie di ritratti delle più importanti personalità del tempo.
-      Molte sue opere, solitamente di ambientazione medioevale, contengono un messaggio patriottico risorgimentale
-      criptato.
-
-      Dopo aver trascorso la giovinezza a Venezia e Roma, si spostò a Milano, dove entrò in contatto con Manzoni,
-      Berchet, Pellico e Cattaneo, conseguendo numerosissimi uffici e dignità; tra queste, degna di menzione è la
-      cattedra di pittura all'Accademia di Brera, della quale divenne titolare nel 1850.</p>
+    <p>{{artista.biografia}}</p>
     <h3>Opere</h3>
     <ion-list>
-      <ion-item>
-        <p>Il Bacio</p>
-      </ion-item>
-      <ion-item>
-        <p>Odalisque</p>
+      <ion-item *ngFor="let opera of opere" routerLink="/dettagli-opera/{{opera.id}}">
+        <p> {{opera.nome}} </p>
       </ion-item>
     </ion-list>
   </div>

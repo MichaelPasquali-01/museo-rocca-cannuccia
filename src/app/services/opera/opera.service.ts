@@ -12,12 +12,12 @@ export class OperaService {
   getDettagliOpera(id: number|null): Observable<any> {
     if (id === null) id = 0;
 
-    const url = 'https://unitestexample.onrender.com/'
+    const url = 'https://unitestexample.onrender.com'
     return this.http.get(`${url}/opere/${id}`);
   }
 
   getAutoriOpera(id: number|null) {
-    const url = 'https://unitestexample.onrender.com/'
+    const url = 'https://unitestexample.onrender.com'
     return this.http.get(`${url}/artisti/${id}`);
   }
 }

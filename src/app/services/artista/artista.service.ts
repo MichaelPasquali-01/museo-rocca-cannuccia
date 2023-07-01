@@ -12,7 +12,12 @@ export class ArtistaService {
   getDettagliArtista(id: number|null): Observable<any> {
     if (id === null) id = 0;
 
-    const url = 'https://unitestexample.onrender.com/'
+    const url = 'https://unitestexample.onrender.com'
     return this.http.get(`${url}/artisti/${id}`);
+  }
+
+  getDettagliOpera(): Observable<any> {
+    const url = 'https://unitestexample.onrender.com'
+    return this.http.get(`${url}/opere`);
   }
 }

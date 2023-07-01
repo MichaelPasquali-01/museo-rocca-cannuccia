@@ -11,6 +11,7 @@ export class ArtistaPage  {
   id:number|null;
   status:number = 0;
   artista:any;
+  opere:any[] = [];
 
   constructor(private route: ActivatedRoute, private artistaService: ArtistaService) {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
@@ -22,6 +23,13 @@ export class ArtistaPage  {
       this.artista = res.artista;
       const date = new Date(res.artista.data);
       this.artista.data = `${`0${date.getDate()}`.slice(-2)}/${`0${date.getMonth()}`.slice(-2)}/${date.getFullYear()}`;
+      this.artistaService.getDettagliOpera().subscribe((res:any) => {
+        res.opere.forEach((opera:any) => {
+          if (opera.idautori.includes("" + this.id)) {
+            this.opere.push(opera);
+          }
+        });
+      });
     });
   }
 
