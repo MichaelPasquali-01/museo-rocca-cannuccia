@@ -25,10 +25,6 @@ export class HomePage {
     Browser.open({url: 'https://www.instagram.com'});
   }
 
-  openWhatsappPage() {
-    Browser.open({url:"https://api.whatsapp.com/send?phone=+391234567894"})
-  }
-
   openMail() {
     Browser.open({
       url: `mailto:destinatario@example.com?subject=${encodeURIComponent('Soggetto del messaggio')}&body=${encodeURIComponent('Corpo del messaggio')}`,

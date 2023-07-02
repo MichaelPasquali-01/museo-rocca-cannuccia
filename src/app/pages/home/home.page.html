@@ -55,10 +55,8 @@
           <ion-icon name="logo-instagram"></ion-icon></ion-button></ion-col>
         <ion-col><ion-button data-href="tel:1234567" fill="clear">
           <ion-icon  name="call-outline"></ion-icon></ion-button></ion-col>
-        <ion-col><ion-button (click)="openWhatsappPage()" fill="clear">
-          <ion-icon  name="logo-whatsapp"></ion-icon></ion-button></ion-col>
         <ion-col><ion-button fill="clear">
-          <ion-icon  name="mail-outline"></ion-icon></ion-button></ion-col>
+          <ion-icon (click)="openMail()" name="mail-outline"></ion-icon></ion-button></ion-col>
       </ion-row>
     </ion-toolbar>
   </ion-footer>
