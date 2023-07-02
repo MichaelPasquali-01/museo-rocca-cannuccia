@@ -31,7 +31,7 @@ export class AppComponent {
       return;
     }
     const { barcodes } = await BarcodeScanner.scan();
-    
+
     this.router.navigate(['./dettagli-opera/' + barcodes[0].displayValue]);
   }
 

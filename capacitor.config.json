@@ -1,1 +1,22 @@
-{}
+{
+  "appId": "com.example.app",
+  "appName": "RCApp",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 3000,
+      "launchAutoHide": true,
+      "backgroundColor": "#FFFFFF",
+      "splashFullScreen": true,
+      "splashImmersive": true,
+      "splashScaleType": "fit",
+      "splashImage": "src/assets/splash.png",
+      "splashDarkMode": {
+        "backgroundColor": "#000000",
+        "splashImage": "src/assets/splash-dark.png"
+      }
+    }
+  }
+}

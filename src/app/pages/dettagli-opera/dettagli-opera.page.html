@@ -19,20 +19,24 @@
         <ion-col>
           <ion-img class="img" src="{{opera.immagini[0]}}"></ion-img>
 
-          <h2 style="text-align: center;"><p> {{opera.nome}} </p>
-            <ion-icon slot="end" class="right" (click)="aggiungiPreferiti()" *ngIf="!isFavorite" size="large"
-                      name="heart-outline"></ion-icon>
-            <ion-icon slot="end" class="right" (click)="aggiungiPreferiti()" *ngIf="isFavorite" size="large"
-                      name="heart"></ion-icon>
-          </h2>
+          <h2 style="text-align: center;"><p> {{opera.nome}} </p></h2>
 
-          <h3 style="text-align: start;"> {{opera.data}} </h3>
+          <h3 style="text-align: start;"> {{opera.data}}
+            <div class="icon-container">
+          <ion-icon slot="end" class="right" (click)="aggiungiPreferiti()" *ngIf="!isFavorite" size="large"
+                    name="heart-outline"></ion-icon>
+          <ion-icon slot="end" class="right" (click)="aggiungiPreferiti()" *ngIf="isFavorite" size="large"
+                    name="heart"></ion-icon>
+            </div>
+
+          </h3>
+
+
+
         </ion-col>
       </ion-item>
-      <ion-button>
-      <h3 *ngFor="let artista of artisti"
+      <ion-button color = "light" *ngFor="let artista of artisti"
            style="text-align: start;" routerLink="/artista/{{artista.id}}"> {{artista.nome}}
-      </h3>
       </ion-button>
       <p> {{opera.descrizione}} </p>
     </ion-list>
