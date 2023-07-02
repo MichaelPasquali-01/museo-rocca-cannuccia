@@ -29,9 +29,11 @@
           <h3 style="text-align: start;"> {{opera.data}} </h3>
         </ion-col>
       </ion-item>
+      <ion-button>
       <h3 *ngFor="let artista of artisti"
-          style="text-align: start;" routerLink="/artista/{{artista.id}}"> {{artista.nome}} </h3>
-
+           style="text-align: start;" routerLink="/artista/{{artista.id}}"> {{artista.nome}}
+      </h3>
+      </ion-button>
       <p> {{opera.descrizione}} </p>
     </ion-list>
   </div>

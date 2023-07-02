@@ -11,3 +11,9 @@
   right: 0px;
   transform: translateY(-50%);
 }
+ion-button {
+  --ion-color-primary: white;
+  --border-width: 0px;
+  --border-color: visible;
+  --box-shadow: none;
+}
