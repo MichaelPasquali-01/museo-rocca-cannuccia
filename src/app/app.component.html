@@ -44,7 +44,8 @@
           <ion-item routerLink="/guestbook" routerDirection="forward">
             <ion-label>Guestbook</ion-label>
           </ion-item>
-          <ion-item (click)="scan()"> <ion-label> Scansione QR</ion-label>
+          <ion-item (click)="scan()" [disabled]="!isSupported">
+            <ion-label> Scansione QR</ion-label>
           </ion-item>
         </ion-menu-toggle>
       </ion-list>

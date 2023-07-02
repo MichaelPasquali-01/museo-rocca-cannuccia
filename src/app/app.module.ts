@@ -4,7 +4,6 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 import { HttpClientModule } from '@angular/common/http';
 import { NativeStorage } from '@awesome-cordova-plugins/native-storage/ngx';
 
@@ -13,7 +12,6 @@ import { NativeStorage } from '@awesome-cordova-plugins/native-storage/ngx';
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
   providers: [
     NativeStorage,
-    BarcodeScanner,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
