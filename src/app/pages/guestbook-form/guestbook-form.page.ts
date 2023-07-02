@@ -35,4 +35,8 @@ export class GuestbookFormPage  {
     this.guestbookFormService.uploadFormData(formData);
 
   }
+
+  reset(event: any) {
+    event.target.reset();
+  }
 }
