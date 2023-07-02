@@ -26,11 +26,11 @@
     <h4 style="margin-left: 15px">Allega un file</h4>
   </ion-row>
   <ion-row class="ion-justify-content-start">
-    <input type="file" id="filesPicker" color="dark" style="margin-left: 15px" (change)="onFileChange($event)" />
+    <input type="file" id="filesPicker" color="dark" style="margin-left: 15px" (change)="onFileChange($event)"/>
   </ion-row>
   <ion-row class="ion-justify-content-center">
-    <ion-button color="dark" shape="round" 
-      (click)="onFormSubmit()" >
+    <ion-button routerLink="/home"  color="dark" shape="round" [disabled]="!(messaggio && nome)"
+                (click)="onFormSubmit()">
       Invia
     </ion-button>
   </ion-row>

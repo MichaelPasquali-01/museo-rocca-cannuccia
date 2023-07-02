@@ -8,8 +8,8 @@ import { GuestbookFormService } from 'src/app/services/guestbook-form/guestbook-
 })
 export class GuestbookFormPage  {
   private file: File | null = null;
-  private nome: string = "";
-  private messaggio: string = "";
+  public nome: string = "";
+  public messaggio: string = "";
 
   constructor(private guestbookFormService: GuestbookFormService) { }
 
@@ -33,5 +33,6 @@ export class GuestbookFormPage  {
     if (this.file !== null) formData.append("foto", this.file, this.file.name);
 
     this.guestbookFormService.uploadFormData(formData);
+
   }
 }
